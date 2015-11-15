@@ -1,0 +1,126 @@
+h1,h2,h3,h4,a,span {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #000;
+	font-family: Arial, sans-serif;
+	/* font-weight: 200; */
+	color: #fff;
+}
+.main {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: url('../images/main.jpg') 50% no-repeat;
+	background-repeat: no-repeat;
+	background-size: cover
+}
+.main_text {
+	position: absolute;
+	top: 1.4vmin;
+	text-align: center;
+	width: 100%;
+}
+.main_text_inner {
+	font-size: 3.8vmin;
+	line-height: 4vmin;
+	display: inline-block;
+	text-align: left;
+	outline: 1px solid;
+	width: 40vmin;
+	padding-left: 10vmin;
+}
+.main_text_inner span {
+	display: block;
+	margin-bottom: 0.64vh;
+}
+.main_text_inner span:nth-child(1) {
+	letter-spacing: 0.18vmin;
+}
+.main_text_inner span:nth-child(2) {
+	letter-spacing: 1.37vmin;
+}
+.main_text_inner span:nth-child(3) {
+	letter-spacing: 0.06vmin;
+}
+.add_title {
+	font-size: 1.96vmin;
+	line-height: 2.1vmin;
+}
+.main_menu {
+	position: absolute;
+	top: 46.5vmin;
+	left: 115vmin;
+	font-size: 2.6vmin;
+}
+.menu_item {
+	margin-bottom: 2vmin;
+	cursor: pointer;
+}
+.menu_item:hover {
+	color: #333;
+}
+.main_title {
+  position: absolute;
+  top: 48vmin;
+  left: 94.7vmin;
+  outline: 1px solid #fc0;
+  width: 16vmin;
+}
+.muar_block {
+  height: 21vmin;
+  outline: 2px solid #f00;
+}
+.dates_block, .place_block {
+  font-size: 2.48vmin;
+  width: 15vmin;
+  margin: 0 auto;
+  letter-spacing: 0.3vmin;
+}
+.dates_block {}
+.place_block {
+    line-height: 2.4vmin;
+    margin-top: 0.5vmin;
+}
+.place_block span:nth-child(1) {
+	letter-spacing: 0.42vmin;
+}
+.place_block span:nth-child(2) {
+	letter-spacing: 0.68vmin;
+}
+.place_block span:nth-child(3) {
+	letter-spacing: 1.36vmin;
+}
+.cylinder_block {
+	top: 15.5vmin;
+	left: 70vmin;
+	bottom: 0.4vmin;
+	right: 72.4vmin;
+	outline: 1px solid blue;
+	position: absolute;
+	background: url('../images/_0010010.png') 50% no-repeat;
+	background-size: cover;
+}
+.description_block {
+	top: 44vmin;
+	left: 26.7vmin;
+	width: 38.2vmin;
+	height: 17.6vmin;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.42);
+	padding: 1vmin;
+	color: #A9A9A9;
+	font-size: 1.92vmin;
+}
+.description_block a {
+	color: #fff;
+}
+@media screen and (max-aspect-ratio: 3/2) {
+
+}
