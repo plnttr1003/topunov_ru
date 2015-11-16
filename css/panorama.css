@@ -4,24 +4,46 @@
 
 @keyframes panorama {
 	0% {
-			opacity: 0;
-	    width: 100%;
+		opacity: 0;
+	   width: 100%;
 	}
-	25% {
+	10% {
 		opacity: 1;
 	}
 	100% {
-	    width: 75%;
+		width: 75%;
+	}
+}
+@keyframes panorama_navigator {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 .panorama_block_inner {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 75%;
 	height: 100%;
 	background:  url('../images/panorama.jpg') 100% 0 no-repeat #999;
 	background-size: cover;
 	animation-name: panorama;
-	animation-duration: 9s;
+	animation-duration: 8s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.47, 0.13, 1, 0.48);
+}
+.panorama_navigator {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 75%;
+	height: 100%;
+	background:  url('../images/panorama_navigator.jpg') 100% 0 no-repeat #999;
+	background-size: cover;
+	animation-name: panorama_navigator;
+	animation-duration: 4s;
+	animation-delay: 9s;
+	animation-fill-mode: both;
 }
