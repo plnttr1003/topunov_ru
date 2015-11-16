@@ -9,7 +9,8 @@ $(document).ready(function(){
 		}
 	}
 
-for (i=0; i < 20; i ++) {
-	$.preLoadImages('images/_0010000' + i + '.png');
-}
+	for (i=0; i < 20; i ++) {
+		$.preLoadImages('images/_0010000' + i + '.png');
+	}
+	$.preLoadImages('images/panorama.jpg');
 });
