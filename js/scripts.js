@@ -18,34 +18,63 @@ $(window).load(function(){
 	var $menuPanorama = $('.menu_item.panorama_item');
 	var $menuContacts = $('.menu_item.contacts_item');
 	var $closeOverlay = $('.cross');
-
-// -- блок скрытых слоев
 	var $overlayBlock = $('.overlay_block');
+	var pageLocation;
+	var ppp = 0;
 
 
-// -- открытие скрытых слоев
+// -- универсальное открытие скрытых слоев
 
-	var menuInfoClick = function() {
-		$('.info_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
+
+	var openLayer = function openLayer(layer) {
+		$('.' + layer + '_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
 		$closeOverlay.css({'visibility':'visible','opacity':'1','z-index':'12'});
-	}
-
-	var menuPanoramaClick = function() {
-		$('.panorama_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
-		$closeOverlay.css({'visibility':'visible','opacity':'1','z-index':'12'});
-	}
-
-	var menuContactsClick = function() {
-		$('.contacts_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
-		$closeOverlay.css({'visibility':'visible','opacity':'1','z-index':'12'});
+		history.pushState({pageUrl: layer }, null, '/' + layer + '')
 	}
 
 // -- закрытие скрытых слоев
 
-	var closeOverlayClick = function() {
+	var closeOverlayClick = function closeOverlayClick() {
 		$overlayBlock.css({'visibility':'hidden','opacity':'0','z-index':'-10'});
 		$closeOverlay.css({'visibility':'hidden','opacity':'0','z-index':'-10'});
 	}
+
+// -- получение адреса
+
+	window.onpopstate = function(e) {
+		if (!window.history.state) {
+			console.log(closeOverlayClick);
+			closeOverlayClick();
+		}
+		else {
+			pageLocation = window.history.state.pageUrl;
+			openLayer(pageLocation);
+		}
+	}
+
+
+
+// -- открытие скрытых слоев
+
+	var menuInfoClick = function menuInfoClick() {
+		$('.info_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
+		$closeOverlay.css({'visibility':'visible','opacity':'1','z-index':'12'});
+		history.pushState({pageUrl:'info'}, 'ИНФОРМАЦИЯ', '/info')
+	}
+
+	var menuPanoramaClick = function menuPanoramaClick() {
+		$('.panorama_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
+		$closeOverlay.css({'visibility':'visible','opacity':'1','z-index':'12'});
+		history.pushState({pageUrl:'panorama'}, 'Панорама выставки', '/panorama')
+	}
+
+	var menuContactsClick = function menuContactsClick() {
+		$('.contacts_block').css({'visibility':'visible','opacity':'1','z-index':'10'});
+		$closeOverlay.css({'visibility':'visible','opacity':'1','z-index':'12'});
+		history.pushState({pageUrl:'contacts'}, 'Контакты', '/contacts')
+	}
+
+
 
 	$menuInfo.on('click', menuInfoClick);
 	$menuPanorama.on('click', menuPanoramaClick);
