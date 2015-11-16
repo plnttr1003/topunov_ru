@@ -40,10 +40,174 @@
 	left: 0;
 	width: 75%;
 	height: 100%;
-	background:  url('../images/panorama_navigator.jpg') 100% 0 no-repeat #999;
-	background-size: cover;
 	animation-name: panorama_navigator;
 	animation-duration: 4s;
 	animation-delay: 9s;
 	animation-fill-mode: both;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+.panorama_navigator_inner {
+	width: 812vmin;
+	height: 100vmin;
+	background:  url('../images/panorama_navigator.jpg') 100% 0 no-repeat #999;
+	background-size: cover;
+}
+.panorama_cylinder {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 3vmin;
+	height: 100%;
+	cursor: pointer;
+}
+.panorama_cylinder:nth-child(1){
+	left: 680vmin;
+	width: 22vmin;
+}
+.panorama_cylinder:nth-child(2){
+	left: 731vmin;
+	width: 16vmin;
+}
+.panorama_cylinder:nth-child(3){
+	left: 761.7vmin;
+	width: 12vmin;
+}
+.panorama_cylinder:nth-child(4){
+	left: 781vmin;
+	width: 9.9vmin;
+}
+.panorama_cylinder:nth-child(5){
+	left: 794.3vmin;
+	width: 7.4vmin;
+}
+.panorama_cylinder:nth-child(6){
+	left: 7.7vmin;
+	width: 6.8vmin;
+}
+.panorama_cylinder:nth-child(7){
+	left: 22.9vmin;
+	width: 6.8vmin;
+}
+.panorama_cylinder:nth-child(8){
+	left: 42.2vmin;
+	width: 6.8vmin;
+}
+.panorama_cylinder:nth-child(9){
+	left: 59.9vmin;
+	width: 6.8vmin;
+}
+.panorama_cylinder:nth-child(10){
+	left: 78.1vmin;
+	width: 6.1vmin;
+}
+.panorama_cylinder:nth-child(11){
+	left: 85.8vmin;
+	width: 6.5vmin;
+}
+.panorama_cylinder:nth-child(12){
+	left: 96.9vmin;
+	width: 7.9vmin;
+}
+.panorama_cylinder:nth-child(13){
+	left: 108.8vmin;
+	width: 9.2vmin;
+}
+.panorama_cylinder:nth-child(14){
+	left: 129.4vmin;
+	width: 13vmin;
+}
+.panorama_cylinder:nth-child(15){
+	left: 164.5vmin;
+	width: 17.4vmin;
+}
+.panorama_cylinder:nth-child(16){
+	left: 217.3vmin;
+	width: 21.4vmin;
+}
+.panorama_cylinder:nth-child(17){
+	left: 270.6vmin;
+	width: 21.4vmin;
+}
+.panorama_cylinder:nth-child(18){
+	left: 324.1vmin;
+	width: 21.4vmin;
+}
+.panorama_cylinder:after {
+	font-family: 'Roboto Condensed', sans-serif;
+	display: block;
+	content: '';
+	position: absolute;
+	top: 47%;
+	padding: 0.6vmin;
+	background: rgba(255,255,255,0.8);
+	font-size: 2.1vmin;
+	color: #000;
+	white-space: nowrap;
+	font-weight: bold;
+	display: none;
+	opacity: 0;
+	transition-timing-function: linear;
+	transition-duration: .2s;
+	transition-property: opacity;
+	font-weight: 400;
+}
+.panorama_cylinder:hover:after {
+	display: block;
+	opacity: 1;
+}
+.panorama_cylinder:nth-child(1):after {
+	content: 'Арбат, 2004';
+}
+.panorama_cylinder:nth-child(2):after {
+	content: 'Арбат, 2004';
+}
+.panorama_cylinder:nth-child(3):after {
+	content: 'Арбат, 2004';
+}
+.panorama_cylinder:nth-child(4):after {
+	content: 'Малая садовая, С.- Петербург, 2005';
+}
+.panorama_cylinder:nth-child(5):after {
+	content: 'Лаврушинский пер., 2004';
+}
+.panorama_cylinder:nth-child(6):after {
+	content: 'Люсиновская ул., 2004';
+}
+.panorama_cylinder:nth-child(7):after {
+	content: 'магазин на Люсиновской ул., 2004';
+}
+.panorama_cylinder:nth-child(8):after {
+	content: 'Гостиный двор, Москва, 2004';
+}
+.panorama_cylinder:nth-child(9):after {
+	content: 'Гостиный двор, Москва, 2004';
+}
+.panorama_cylinder:nth-child(10):after {
+	content: 'Большая Никитская, 2004';
+}
+.panorama_cylinder:nth-child(11):after {
+	content: 'парк Монрепо, 2005';
+}
+.panorama_cylinder:nth-child(12):after {
+	content: 'Московский проспект, С.- Петербург, 2005';
+}
+.panorama_cylinder:nth-child(13):after {
+	content: 'ул. Забелина, 2005';
+}
+.panorama_cylinder:nth-child(14):after {
+	content: 'Гостиный двор, Москва, 2004';
+}
+.panorama_cylinder:nth-child(15):after {
+	content: 'Марфо-Мариинская обитель, 2004';
+}
+.panorama_cylinder:nth-child(16):after {
+	content: 'Выборг, 2005';
+}
+.panorama_cylinder:nth-child(17):after {
+	content: 'бульвар Карбышева, 2006';
+}
+.panorama_cylinder:nth-child(18):after {
+	content: 'инсталляция Т. Кавана в Третьяковке, 2006';
 }

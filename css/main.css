@@ -11,7 +11,7 @@ html, body {
 	background: #000;
 	font-family: Arial, sans-serif;
 	color: #fff;
-	background: url('../images/main.jpg') 50% no-repeat;
+	background: url('../images/main.jpg') 50% no-repeat #ccc;
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-font-smoothing: antialiased;
