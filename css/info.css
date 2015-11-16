@@ -26,4 +26,6 @@
 .info_text_block {
 	width: 421px;
 	margin: 0 auto;
+	overflow: hidden;
+	padding-bottom: 40px;
 }
