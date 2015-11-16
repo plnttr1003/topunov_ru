@@ -1,0 +1,28 @@
+.contacts_block {
+	background:  url('../images/fon2.jpg') 0 no-repeat #999;
+	font-size: 15px;
+	line-height: 15px;
+	color: #fff;
+}
+.contacts_inner {
+	margin: 0 auto;
+	width: 830px;
+}
+.contacts_info {
+	display: inline-block;
+	width: 110px;
+	text-align: right;
+}
+.contacts_link {
+	margin-top: 280px;
+	display: block;
+	color: #333;
+	font-size: 14px;
+}
+.contacts_link:hover {
+	color: #555;
+}
+.contacts_phone {
+	margin-top: 15px;
+	display: block;
+}

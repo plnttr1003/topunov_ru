@@ -21,7 +21,6 @@ html, body {
 	height: 100vmin;
 	margin: 0 auto;
 	position: relative;
-	/*outline: 1px solid #fc0;*/
 }
 .main_text {
 	position: absolute;
@@ -34,7 +33,6 @@ html, body {
 	line-height: 4vmin;
 	display: inline-block;
 	text-align: left;
-	/*outline: 1px solid;*/
 	width: 40vmin;
 	padding-left: 10vmin;
 }
@@ -85,15 +83,13 @@ html, body {
 .main_title {
 	position: absolute;
 	top: 47.8vmin;
-	left: 57.9vmin;
-	/*outline: 1px solid #fc0;*/
+	left: 58.9vmin;
 	width: 16vmin;
 }
 .muar_block {
 	height: 21.3vmin;
 	background: url('../images/muar.svg') 50% 0 no-repeat;
 	background-size: contain;
-	/*outline: 2px solid #f00;*/
 }
 .dates_block, .place_block {
 	font-size: 2.48vmin;
@@ -119,7 +115,6 @@ html, body {
 	top: 15.3vmin;
 	left: 33vmin;
 	bottom: 0;
-	/* outline: 1px solid blue; */
 	position: absolute;
 	background-image: url('../images/_001000010.png');
 	background-repeat: no-repeat;
@@ -143,8 +138,66 @@ html, body {
 	color: #fff;
 }
 .overlay_block {
-	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	visibility: hidden;
 	opacity: 0;
+	z-index: -10;
+	transition-timing-function: linear;
+	transition-duration: 0.4s;
+	transition-property: opacity;
+}
+.cross {
+	position: absolute;
+	right: 3.5vmin;
+	top: 3.5vmin;
+	width: 4vmin;
+	height: 3.7vmin;
+	z-index: -10;
+	transition-timing-function: linear;
+	transition-duration: 0.4s;
+	transition-property: opacity;
+	cursor: pointer;
+	overflow: hidden;
+}
+.cross:after {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 50%;
+	height: 5vmax;
+	width: 6vmax;
+	margin-top: 0vmax;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform-origin: 50%;
+	transform-origin: 50%;
+	z-index: 100;
+	left: -0.2vmax;
+	border-left: 1px solid #555;
+}
+.cross:before {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 49%;
+	height: 5vmax;
+	width: 4vmax;
+	margin-top: -0.6vmax;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform-origin: 50%;
+	transform-origin: 50%;
+	z-index: 100;
+	left: -2.6vmax;
+	border-top: 1px solid #555;
+}
+.cross:hover:after,
+.cross:hover:before {
+	border-color: #333;
 }
 @media screen and (max-aspect-ratio: 3/2) {
 

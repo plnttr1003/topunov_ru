@@ -11,6 +11,5 @@ $(document).ready(function(){
 
 for (i=0; i < 20; i ++) {
 	$.preLoadImages('images/_0010000' + i + '.png');
-	console.log('images/_0010000' + i + '.png');
 }
 });
