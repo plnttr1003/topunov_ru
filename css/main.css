@@ -21,7 +21,7 @@ html, body {
 	height: 100vmin;
 	margin: 0 auto;
 	position: relative;
-	outline: 1px solid #fc0;
+	/*outline: 1px solid #fc0;*/
 }
 .main_text {
 	position: absolute;
@@ -34,7 +34,7 @@ html, body {
 	line-height: 4vmin;
 	display: inline-block;
 	text-align: left;
-	outline: 1px solid;
+	/*outline: 1px solid;*/
 	width: 40vmin;
 	padding-left: 10vmin;
 }
@@ -55,6 +55,19 @@ html, body {
 	font-size: 1.96vmin;
 	line-height: 2.1vmin;
 }
+.vertical_text {
+ 	position: absolute;
+ 	width: 100vmin;
+ 	color: #222;
+ 	font-size: 3.2vmin;
+ 	transform: scale(0.8, 1) rotate(270deg);
+ 	top: 0;
+ 	left: 21vmin;
+ 	text-align: center;
+ 	bottom: 0;
+ 	text-transform: uppercase;
+ 	white-space: nowrap;
+}
 .main_menu {
 	position: absolute;
 	top: 46.5vmin;
@@ -71,14 +84,16 @@ html, body {
 }
 .main_title {
 	position: absolute;
-	top: 48vmin;
-	left: 58.4vmin;
-	outline: 1px solid #fc0;
+	top: 47.8vmin;
+	left: 57.9vmin;
+	/*outline: 1px solid #fc0;*/
 	width: 16vmin;
 }
 .muar_block {
-	height: 21vmin;
-	outline: 2px solid #f00;
+	height: 21.3vmin;
+	background: url('../images/muar.svg') 50% 0 no-repeat;
+	background-size: contain;
+	/*outline: 2px solid #f00;*/
 }
 .dates_block, .place_block {
 	font-size: 2.48vmin;
@@ -101,15 +116,17 @@ html, body {
 	letter-spacing: 1.36vmin;
 }
 .cylinder_block {
-	top: 16.5vmin;
-	left: 32vmin;
-	bottom: 1.4vmin;
-	outline: 1px solid blue;
+	top: 15.3vmin;
+	left: 33vmin;
+	bottom: 0;
+	/* outline: 1px solid blue; */
 	position: absolute;
 	background-image: url('../images/_001000010.png');
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 32vmin;
 	width: 34vmin;
+	background-position: 50% 0;
+	opacity: 0.7;
 }
 .description_block {
 	top: 44vmin;
@@ -124,6 +141,10 @@ html, body {
 }
 .description_block a {
 	color: #fff;
+}
+.overlay_block {
+	display: none;
+	opacity: 0;
 }
 @media screen and (max-aspect-ratio: 3/2) {
 
