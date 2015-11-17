@@ -30,9 +30,9 @@
 	background:  url('../images/panorama.jpg') 100% 0 no-repeat #999;
 	background-size: cover;
 	animation-name: panorama;
-	animation-duration: 8s;
+	animation-duration: 5s;
 	animation-fill-mode: both;
-	animation-timing-function: cubic-bezier(0.47, 0.13, 1, 0.48);
+	animation-timing-function: linear;
 }
 .panorama_navigator {
 	position: absolute;
@@ -42,7 +42,7 @@
 	height: 100%;
 	animation-name: panorama_navigator;
 	animation-duration: 4s;
-	animation-delay: 9s;
+	animation-delay: 6s;
 	animation-fill-mode: both;
 	overflow-x: scroll;
 	overflow-y: hidden;
@@ -210,4 +210,14 @@
 }
 .panorama_cylinder:nth-child(18):after {
 	content: 'инсталляция Т. Кавана в Третьяковке, 2006';
+}
+.panorama_viewer {
+	position: absolute;
+	top: 0;
+	left: 75%;
+	right: 0;
+	bottom: 0;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
 }

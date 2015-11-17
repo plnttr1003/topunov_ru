@@ -4,6 +4,7 @@ $(window).load(function(){
 
 	var $block = $('.cylinder_block');
 	var blockPath = 'images/_0010000';
+	var viewerPath = 'images/st';
 
 
 	var divide = $('body').width() / 100;
@@ -19,6 +20,8 @@ $(window).load(function(){
 	var $menuContacts = $('.menu_item.contacts_item');
 	var $closeOverlay = $('.cross');
 	var $overlayBlock = $('.overlay_block');
+	var $panoramaCylinder = $('.panorama_cylinder');
+	var $panoramaViewer = $('.panorama_viewer')
 	var pageLocation;
 	var ppp = 0;
 
@@ -80,4 +83,9 @@ $(window).load(function(){
 	$menuPanorama.on('click', menuPanoramaClick);
 	$menuContacts.on('click', menuContactsClick);
 	$closeOverlay.on('click', closeOverlayClick);
+
+	$panoramaCylinder.on('click', function() {
+		var panN = ($(this).index() + 1)
+		$panoramaViewer.css({'background-image':'url(' + viewerPath + panN + '/st0011.png)'})
+	})
 });
