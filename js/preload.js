@@ -9,8 +9,8 @@ $(document).ready(function(){
 		}
 	}
 
-	for (i=0; i < 20; i ++) {
-		$.preLoadImages('images/_0010000' + i + '.png');
+	for (i=1; i < 22; i ++) {
+		$.preLoadImages('images/st0/st' + i + '.png');
 	}
 	$.preLoadImages('images/panorama.jpg');
 });
