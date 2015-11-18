@@ -15,15 +15,12 @@ $(window).load(function(){
 	}
 	$.preLoadImages('images/panorama.jpg');
 
-
-
 	var $menuItem = $('.menu_item');
 	var $closeOverlay = $('.cross');
 	var $overlayBlock = $('.overlay_block');
 	var $panoramaCylinder = $('.panorama_cylinder');
 	var $panoramaViewer = $('.panorama_viewer')
 	var $block = $('.cylinder_block');
-
 	var pageLocation;
 	var layer;
 

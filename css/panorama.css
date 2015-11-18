@@ -241,3 +241,14 @@
 	animation-delay: 6s;
 	animation-fill-mode: both;
 }
+.panorama_viewer_background {
+	position: absolute;
+	top: 0;
+	left: 75%;
+	right: 0;
+	bottom: 0;
+	background-image: url('../images/panorama_floor.jpg'), url('../images/panorama_viewer.jpg');
+	background-position: 0 100%, 50% 50%;
+	background-repeat: repeat-x, no-repeat;
+	background-size: auto, cover;
+}
