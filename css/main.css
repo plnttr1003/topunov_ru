@@ -8,13 +8,15 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background: #000;
 	font-family: Arial, sans-serif;
 	color: #fff;
+	cursor: default;
 	background: url('../images/main.jpg') 50% no-repeat #ccc;
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 .main {
 	width: 100vmin;
