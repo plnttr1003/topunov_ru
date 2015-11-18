@@ -12,14 +12,27 @@
 	}
 	100% {
 		width: 75%;
+		z-index: -12;
 	}
 }
 @keyframes panorama_navigator {
 	0% {
 		opacity: 0;
+		z-index: -20;
 	}
 	100% {
 		opacity: 1;
+		z-index: 10
+	}
+}
+@keyframes panorama_viewer {
+	0% {
+		opacity: 0;
+		z-index: -20;
+	}
+	100% {
+		opacity: 1;
+		z-index: 10
 	}
 }
 .panorama_block_inner {
@@ -33,6 +46,7 @@
 	animation-duration: 5s;
 	animation-fill-mode: both;
 	animation-timing-function: linear;
+	z-index: 12;
 }
 .panorama_navigator {
 	position: absolute;
@@ -40,6 +54,7 @@
 	left: 0;
 	width: 75%;
 	height: 100%;
+	z-index: -20;
 	animation-name: panorama_navigator;
 	animation-duration: 4s;
 	animation-delay: 6s;
@@ -217,7 +232,12 @@
 	left: 75%;
 	right: 0;
 	bottom: 0;
+	background-image: url('../images/st0/st11.png');
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: contain;
+	animation-name: panorama_viewer;
+	animation-duration: 4s;
+	animation-delay: 6s;
+	animation-fill-mode: both;
 }
