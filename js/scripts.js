@@ -19,7 +19,7 @@ $(window).load(function(){
 	var $closeOverlay = $('.cross');
 	var $overlayBlock = $('.overlay_block');
 	var $panoramaCylinder = $('.panorama_cylinder');
-	var $panoramaViewer = $('.panorama_viewer')
+	var $panoramaViewer = $('.panorama_viewer');
 	var $block = $('.cylinder_block');
 	var pageLocation;
 	var layer;
@@ -33,7 +33,6 @@ $(window).load(function(){
 		if($(e.target).is($panoramaViewer)) {
 			var divide = $panoramaViewer.width() / 100;
 			var num = ((Math.ceil((e.pageX - $panoramaViewer.offset().left) / divide) / 5) + 1).toFixed();
-			console.log(num);
 			$panoramaViewer.css({'background-image':'url(' + blockPath + folN + '/st' + num + '.png)'});
 		}
 		else {
@@ -43,11 +42,23 @@ $(window).load(function(){
 		}
 	}
 
+	var panoramaMove = function panoramaMove(e) {
+		var $panoramaNavigator = $('.panorama_navigator');
+		var $panoramaNavigatorInner = $('.panorama_navigator_inner')
+		if($(e.target).is($panoramaNavigatorInner) || $(e.target).is($panoramaCylinder)) {
+			var divide = $panoramaNavigator.width() / 100;
+			var num = (((Math.ceil(e.pageX / divide) / 5) - 10) * 10).toFixed();
+			console.log(num);
+			$panoramaNavigatorInner.css({'margin-left':parseInt(num)});
+		}
+	}
+
 
 	$(window).mousemove(function(e) {
 		var divide = $('body').width() / 100;
 		var folN = 0;
 		cylinderChange(e, $block);
+		panoramaMove(e);
 	})
 
 
@@ -73,7 +84,8 @@ $(window).load(function(){
 
 	// -- закрытие скрытых слоев
 	var closeOverlayClick = function closeOverlayClick() {
-		$($overlayBlock, $closeOverlay).css({'visibility':'hidden','opacity':'0','z-index':'-10'});
+		$overlayBlock.css({'visibility':'hidden','opacity':'0','z-index':'-10'});
+		$closeOverlay.css({'visibility':'hidden','opacity':'0','z-index':'-10'});
 		history.pushState({pageUrl: null }, null, '/');
 	}
 
