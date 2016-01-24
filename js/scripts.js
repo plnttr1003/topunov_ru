@@ -19,15 +19,19 @@ $(window).load(function(){
 	var $closeOverlay = $('.cross');
 	var $overlayBlock = $('.overlay_block');
 	var $panoramaCylinder = $('.panorama_cylinder');
+	var $panoramaControl = $('.panorama_control');
 	var $panoramaViewer = $('.panorama_viewer');
 	var $block = $('.cylinder_block');
 	var pageLocation;
 	var layer;
-
+	var clone = false;
+	var num = 0;
+	var $panoramaNavigatorInnerAppend = $('.panorama_navigator_inner')
 
 // -- управление цилиндром
 	var blockPath = 'images/st';
-	var folN = 0; // номер папки
+	var folN = 0;
+	var ePageX = 0;
 
 	var cylinderChange = function cylynderChange(e, $targetElement) {
 		if($(e.target).is($panoramaViewer)) {
@@ -45,32 +49,45 @@ $(window).load(function(){
 	var panoramaMove = function panoramaMove(e) {
 		var $panoramaNavigator = $('.panorama_navigator');
 		var $panoramaNavigatorInner = $('.panorama_navigator_inner')
-		if($(e.target).is($panoramaNavigatorInner) || $(e.target).is($panoramaCylinder)) {
+
+		if($(e.target).is($panoramaControl)) {
 			var divide = $panoramaNavigator.width() / 100;
-			var num = (((Math.ceil(e.pageX / divide) / 5) - 10) * 10).toFixed();
+			if(ePageX > e.pageX) {
+				console.log(parseInt(((((Math.abs(e.pageX / divide) + 10) / 5))).toFixed()));
+				num -= parseInt(((((Math.abs(e.pageX / divide) + 50) / 5))).toFixed())
+				if (num < 0) {
+					console.log('21');
+					$panoramaNavigator.prepend($panoramaNavigatorInner);
+				}
+			}
+			else if ((ePageX < e.pageX)) {
+				//console.log(ePageX + '  ' + e.pageX);
+				console.log(parseInt(((((Math.abs(e.pageX / divide) + 10) / 5))).toFixed()));
+				num += parseInt(((((Math.abs(e.pageX / divide) + 50) / 5))).toFixed());
+				if (num > 0) {console.log('00')};
+				//$panoramaNavigatorInnerAppend.css({'left':})
+			}
+			ePageX = e.pageX;
 			console.log(num);
-			$panoramaNavigatorInner.css({'margin-left':parseInt(num)});
+			$panoramaNavigator.scrollLeft(num);
 		}
 	}
-
 
 	$(window).mousemove(function(e) {
 		var divide = $('body').width() / 100;
 		var folN = 0;
 		cylinderChange(e, $block);
 		panoramaMove(e);
-	})
-
+	});
 
 	$panoramaCylinder.on('click', function() {
 		folN = ($(this).index() + 1)
-		num = 10;
+		var num = 10;
 		$panoramaViewer.css({'background-image':'url(' + blockPath + folN + '/st' + num + '.png)'});
 		for (i=1; i < 22; i ++) {
 			$.preLoadImages('images/st' + folN + '/st' + i + '.png');
 		}
 	})
-
 
 	// -- открытие скрытых слоев
 	var openLayer = function openLayer(layer, push) {
@@ -81,7 +98,6 @@ $(window).load(function(){
 		}
 	}
 
-
 	// -- закрытие скрытых слоев
 	var closeOverlayClick = function closeOverlayClick() {
 		$overlayBlock.css({'visibility':'hidden','opacity':'0','z-index':'-10'});
@@ -89,11 +105,9 @@ $(window).load(function(){
 		history.pushState({pageUrl: null }, null, '/');
 	}
 
-
 	// -- действия на меню и закрытие
 	$menuItem.on('click', function(e) {openLayer($(this).attr('id'), true);});
 	$closeOverlay.on('click', closeOverlayClick);
-
 
 	// -- получение адреса
 	window.onpopstate = function(e) {
@@ -105,5 +119,4 @@ $(window).load(function(){
 			pageLocation !== null ? openLayer(pageLocation, false) : closeOverlayClick();
 		}
 	}
-
 });
