@@ -91,75 +91,75 @@
 	height: 100%;
 	cursor: pointer;
 }
-.panorama_cylinder:nth-child(1){
+.panorama_cylinder.cylinder01{
 	left: 680vmin;
 	width: 22vmin;
 }
-.panorama_cylinder:nth-child(2){
+.panorama_cylinder.cylinder02{
 	left: 731vmin;
 	width: 16vmin;
 }
-.panorama_cylinder:nth-child(3){
+.panorama_cylinder.cylinder03{
 	left: 761.7vmin;
 	width: 12vmin;
 }
-.panorama_cylinder:nth-child(4){
+.panorama_cylinder.cylinder04{
 	left: 781vmin;
 	width: 9.9vmin;
 }
-.panorama_cylinder:nth-child(5){
+.panorama_cylinder.cylinder05{
 	left: 794.3vmin;
 	width: 7.4vmin;
 }
-.panorama_cylinder:nth-child(6){
+.panorama_cylinder.cylinder06{
 	left: 7.7vmin;
 	width: 6.8vmin;
 }
-.panorama_cylinder:nth-child(7){
+.panorama_cylinder.cylinder07{
 	left: 22.9vmin;
 	width: 6.8vmin;
 }
-.panorama_cylinder:nth-child(8){
+.panorama_cylinder.cylinder08{
 	left: 42.2vmin;
 	width: 6.8vmin;
 }
-.panorama_cylinder:nth-child(9){
+.panorama_cylinder.cylinder09{
 	left: 59.9vmin;
 	width: 6.8vmin;
 }
-.panorama_cylinder:nth-child(10){
+.panorama_cylinder.cylinder010{
 	left: 78.1vmin;
 	width: 6.1vmin;
 }
-.panorama_cylinder:nth-child(11){
+.panorama_cylinder.cylinder011{
 	left: 85.8vmin;
 	width: 6.5vmin;
 }
-.panorama_cylinder:nth-child(12){
+.panorama_cylinder.cylinder012{
 	left: 96.9vmin;
 	width: 7.9vmin;
 }
-.panorama_cylinder:nth-child(13){
+.panorama_cylinder.cylinder013{
 	left: 108.8vmin;
 	width: 9.2vmin;
 }
-.panorama_cylinder:nth-child(14){
+.panorama_cylinder.cylinder014{
 	left: 129.4vmin;
 	width: 13vmin;
 }
-.panorama_cylinder:nth-child(15){
+.panorama_cylinder.cylinder015{
 	left: 164.5vmin;
 	width: 17.4vmin;
 }
-.panorama_cylinder:nth-child(16){
+.panorama_cylinder.cylinder016{
 	left: 217.3vmin;
 	width: 21.4vmin;
 }
-.panorama_cylinder:nth-child(17){
+.panorama_cylinder.cylinder017{
 	left: 270.6vmin;
 	width: 21.4vmin;
 }
-.panorama_cylinder:nth-child(18){
+.panorama_cylinder.cylinder018{
 	left: 324.1vmin;
 	width: 21.4vmin;
 }
@@ -187,58 +187,58 @@
 	display: block;
 	opacity: 1;
 }
-.panorama_cylinder:nth-child(1):after {
+.panorama_cylinder.cylinder01:after {
 	content: 'Арбат, 2004';
 }
-.panorama_cylinder:nth-child(2):after {
+.panorama_cylinder.cylinder02:after {
 	content: 'Арбат, 2004';
 }
-.panorama_cylinder:nth-child(3):after {
+.panorama_cylinder.cylinder03:after {
 	content: 'Арбат, 2004';
 }
-.panorama_cylinder:nth-child(4):after {
+.panorama_cylinder.cylinder04:after {
 	content: 'Малая садовая, С.- Петербург, 2005';
 }
-.panorama_cylinder:nth-child(5):after {
+.panorama_cylinder.cylinder05:after {
 	content: 'Лаврушинский пер., 2004';
 }
-.panorama_cylinder:nth-child(6):after {
+.panorama_cylinder.cylinder06:after {
 	content: 'Люсиновская ул., 2004';
 }
-.panorama_cylinder:nth-child(7):after {
+.panorama_cylinder.cylinder07:after {
 	content: 'магазин на Люсиновской ул., 2004';
 }
-.panorama_cylinder:nth-child(8):after {
+.panorama_cylinder.cylinder08:after {
 	content: 'Гостиный двор, Москва, 2004';
 }
-.panorama_cylinder:nth-child(9):after {
+.panorama_cylinder.cylinder09:after {
 	content: 'Гостиный двор, Москва, 2004';
 }
-.panorama_cylinder:nth-child(10):after {
+.panorama_cylinder.cylinder010:after {
 	content: 'Большая Никитская, 2004';
 }
-.panorama_cylinder:nth-child(11):after {
+.panorama_cylinder.cylinder011:after {
 	content: 'парк Монрепо, 2005';
 }
-.panorama_cylinder:nth-child(12):after {
+.panorama_cylinder.cylinder012:after {
 	content: 'Московский проспект, С.- Петербург, 2005';
 }
-.panorama_cylinder:nth-child(13):after {
+.panorama_cylinder.cylinder013:after {
 	content: 'ул. Забелина, 2005';
 }
-.panorama_cylinder:nth-child(14):after {
+.panorama_cylinder.cylinder014:after {
 	content: 'Гостиный двор, Москва, 2004';
 }
-.panorama_cylinder:nth-child(15):after {
+.panorama_cylinder.cylinder015:after {
 	content: 'Марфо-Мариинская обитель, 2004';
 }
-.panorama_cylinder:nth-child(16):after {
+.panorama_cylinder.cylinder016:after {
 	content: 'Выборг, 2005';
 }
-.panorama_cylinder:nth-child(17):after {
+.panorama_cylinder.cylinder017:after {
 	content: 'бульвар Карбышева, 2006';
 }
-.panorama_cylinder:nth-child(18):after {
+.panorama_cylinder.cylinder018:after {
 	content: 'инсталляция Т. Кавана в Третьяковке, 2006';
 }
 .panorama_viewer {
@@ -247,7 +247,7 @@
 	left: 75%;
 	right: 0;
 	bottom: 0;
-	background-image: url('../images/st0/st11.png');
+	/*background-image: url('../images/st0/st11.png');*/
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -265,5 +265,5 @@
 	background-image: url('../images/panorama_floor.jpg'), url('../images/panorama_viewer.jpg');
 	background-position: 0 100%, 50% 50%;
 	background-repeat: repeat-x, no-repeat;
-	background-size: auto, cover;
+	background-size: 100% 11.3%, cover;
 }

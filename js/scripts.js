@@ -30,14 +30,17 @@ $(window).load(function(){
 
 // -- управление цилиндром
 	var blockPath = 'images/st';
-	var folN = 0;
+	var folN;
+	var moveCyl = 0;
 	var ePageX = 0;
 
 	var cylinderChange = function cylynderChange(e, $targetElement) {
 		if($(e.target).is($panoramaViewer)) {
 			var divide = $panoramaViewer.width() / 100;
 			var num = ((Math.ceil((e.pageX - $panoramaViewer.offset().left) / divide) / 5) + 1).toFixed();
-			$panoramaViewer.css({'background-image':'url(' + blockPath + folN + '/st' + num + '.png)'});
+			console.log(num);
+			if (num > 11) {moveCyl = 1;}
+			if (moveCyl === 1) {$panoramaViewer.css({'background-image':'url(' + blockPath + folN + '/st' + num + '.png)'});}
 		}
 		else {
 			var divide = $('body').width() / 100;
@@ -56,31 +59,26 @@ $(window).load(function(){
 				console.log(parseInt(((((Math.abs(e.pageX / divide) + 10) / 5))).toFixed()));
 				num -= parseInt(((((Math.abs(e.pageX / divide) + 50) / 5))).toFixed())
 				if (num < 0) {
-					console.log('21');
 					$panoramaNavigator.prepend($panoramaNavigatorInner);
 				}
 			}
 			else if ((ePageX < e.pageX)) {
-				//console.log(ePageX + '  ' + e.pageX);
 				console.log(parseInt(((((Math.abs(e.pageX / divide) + 10) / 5))).toFixed()));
 				num += parseInt(((((Math.abs(e.pageX / divide) + 50) / 5))).toFixed());
-				if (num > 0) {console.log('00')};
-				//$panoramaNavigatorInnerAppend.css({'left':})
 			}
 			ePageX = e.pageX;
-			console.log(num);
 			$panoramaNavigator.scrollLeft(num);
 		}
 	}
 
 	$(window).mousemove(function(e) {
 		var divide = $('body').width() / 100;
-		var folN = 0;
-		cylinderChange(e, $block);
+		if (folN) {cylinderChange(e, $block)}
 		panoramaMove(e);
 	});
 
 	$panoramaCylinder.on('click', function() {
+		moveCyl = 0;
 		folN = ($(this).index() + 1)
 		var num = 10;
 		$panoramaViewer.css({'background-image':'url(' + blockPath + folN + '/st' + num + '.png)'});
