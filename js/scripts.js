@@ -26,7 +26,6 @@ $(window).load(function(){
 	var layer;
 	var clone = false;
 	var num = 0;
-	var $panoramaNavigatorInnerAppend = $('.panorama_navigator_inner')
 
 // -- управление цилиндром
 	var blockPath = 'images/st';
@@ -56,27 +55,32 @@ $(window).load(function(){
 		if($(e.target).is($panoramaControl)) {
 			var divide = $panoramaNavigator.width() / 100;
 			if(ePageX > e.pageX) {
-				console.log(parseInt(((((Math.abs(e.pageX / divide) + 10) / 5))).toFixed()));
 				num -= parseInt(((((Math.abs(e.pageX / divide) + 50) / 5))).toFixed())
-				if (num < 0) {
-					$panoramaNavigator.prepend($panoramaNavigatorInner);
+				if ($panoramaNavigator.scrollLeft() <= 0) {
+					num = $panoramaNavigatorInner.width() / 2;
 				}
 			}
 			else if ((ePageX < e.pageX)) {
-				console.log(parseInt(((((Math.abs(e.pageX / divide) + 10) / 5))).toFixed()));
 				num += parseInt(((((Math.abs(e.pageX / divide) + 50) / 5))).toFixed());
+				if ($panoramaNavigator.scrollLeft() >= ($panoramaNavigatorInner.width() / 2)) {
+					num = 0;
+				}
 			}
 			ePageX = e.pageX;
 			$panoramaNavigator.scrollLeft(num);
 		}
 	}
 
-	$(window).mousemove(function(e) {
+	$(window)
+	.mousemove(function(e) {
 		var divide = $('body').width() / 100;
 		if (folN) {cylinderChange(e, $block)}
 		panoramaMove(e);
+	})
+	/*.mouseover(function(e) {
+		panoramaMove(e);
 	});
-
+	*/
 	$panoramaCylinder.on('click', function() {
 		moveCyl = 0;
 		folN = ($(this).index() + 1)

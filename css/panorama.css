@@ -1,7 +1,63 @@
+.cross {
+	top: 1px;
+	left: 64.3%;
+	border: 3px solid #fff;
+	height: 3vmin;
+	width: 3vmin;
+	border-radius: 2px;
+	animation-name: panorama_viewer;
+	animation-duration: 4s;
+	animation-delay: 6s;
+	animation-fill-mode: both;
+	overflow: visible;
+}
+.cross:after, .cross:before {
+	border: 3px solid #fff;
+}
+.cross:after {
+	left: 0;
+	top: 0;
+	margin: 0;
+	height: 0;
+	width: 4.24vmin;
+	transform-origin: 0;
+	border: 0;
+	border-top: 3px solid #fff;
+	margin-top: -2px;
+}
+.cross:before {
+	left: 100%;
+	top: 0;
+	margin: 0;
+	height: 0;
+	width: 4.24vmin;
+	transform-origin: 0;
+	border: 0;
+	border-top: 3px solid #fff;
+	margin-top: -2px;
+	transform: rotate(135deg);
+}
+.cross:hover, .cross:hover:after, .cross:hover:before {
+	border-color: #996600;
+}
+.cross_inner {
+	position: absolute;
+	right: 0;
+	text-transform: uppercase;
+	color: #fff;
+}
+.cross:hover .cross_inner {
+	position: absolute;
+	right: 100%;
+	text-transform: uppercase;
+	color: #fff;
+	margin-right: 1vmin;
+	font-size: 3vmin;
+	display: block;
+}
 .panorama_block {
 	background: no-repeat #999;
 }
-
 @keyframes panorama {
 	0% {
 		opacity: 0;
@@ -76,6 +132,12 @@
 	z-index: 100;
 }
 .panorama_navigator_inner {
+	height: 100vmin;
+	display: table;
+	overflow: hidden;
+}
+.panorama_cylinder_block {
+	position: relative;
 	width: 812vmin;
 	height: 100vmin;
 	background:  url('../images/panorama_navigator.jpg') 100% 0 no-repeat #999;
@@ -247,7 +309,6 @@
 	left: 75%;
 	right: 0;
 	bottom: 0;
-	/*background-image: url('../images/st0/st11.png');*/
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: contain;

@@ -165,6 +165,9 @@ html, body {
 	cursor: pointer;
 	overflow: hidden;
 }
+.cross_inner {
+	display: none;
+}
 .cross:after {
 	display: block;
 	content: '';
